@@ -2,9 +2,9 @@
 pragma solidity ^0.8.17;
 
 import "forge-std/Script.sol";
-import {Airdrop} from "../src/Airdrop.sol";
+import {Dummy721} from "../src/Dummy721.sol";
 
-contract AirdropERC1155 is Script {
+contract AirdropERC721 is Script {
     function setUp() public {}
     address public CONTRACT_OWNER =0x976EA74026E726554dB657fA54763abd0C3a0aa9;
     address public MY_LOCAL_ADDRESS = 0x70997970C51812dc3A010C7d01b50e0d17dc79C8;
@@ -12,16 +12,16 @@ contract AirdropERC1155 is Script {
 
     function run() public {
        vm.startBroadcast(CONTRACT_OWNER);
-       Airdrop ad = new Airdrop();
-       ad.mint(MY_LOCAL_ADDRESS, 1, 100000, DATA);
+       Dummy721 ad = new Dummy721();
+       ad.mint(MY_LOCAL_ADDRESS, 10);
        vm.stopBroadcast();
     }
 
     function mintTokensForSelf() public {
         vm.startBroadcast(CONTRACT_OWNER);
-        // use address from deployed contract 0x7ef8E99980Da5bcEDcF7C10f41E55f759F6A174B
-        Airdrop ad = Airdrop(0x7ef8E99980Da5bcEDcF7C10f41E55f759F6A174B);
-        ad.mint(MY_LOCAL_ADDRESS, 3, 100, DATA);
+       //contract address is 0x77c7E3905c21177Be97956c6620567596492C497
+        Dummy721 ad = Dummy721(0x77c7E3905c21177Be97956c6620567596492C497);
+        ad.mint(0xFEfE69bc078e23f1cbaBB2e4D1f4cF775aA9053E, 10);
         vm.stopBroadcast();
      }
 }
