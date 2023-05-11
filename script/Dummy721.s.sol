@@ -19,9 +19,9 @@ contract AirdropERC721 is Script {
 
     function mintTokensForSelf() public {
         vm.startBroadcast(CONTRACT_OWNER);
-       //contract address is 0x77c7E3905c21177Be97956c6620567596492C497
-        Dummy721 ad = Dummy721(0x77c7E3905c21177Be97956c6620567596492C497);
-        ad.mint(0xFEfE69bc078e23f1cbaBB2e4D1f4cF775aA9053E, 10);
+       //contract address is 0xbD3afEF4b26918cDb922F9D80aeA9b8e64524432 
+        Dummy721 ad = Dummy721(0xbD3afEF4b26918cDb922F9D80aeA9b8e64524432);
+        ad.mint(0xFEfE69bc078e23f1cbaBB2e4D1f4cF775aA9053E, 2);
         vm.stopBroadcast();
      }
 }

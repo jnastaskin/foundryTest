@@ -13,7 +13,7 @@ contract AirdropERC1155 is Script {
     function run() public {
        vm.startBroadcast(CONTRACT_OWNER);
        Airdrop ad = new Airdrop();
-       ad.mint(MY_LOCAL_ADDRESS, 1, 100000, DATA);
+       ad.mint(MY_LOCAL_ADDRESS, 1, 1000, DATA);
        vm.stopBroadcast();
     }
 
